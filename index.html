@@ -1,48 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Frontend quiz app</title>
-</head>
-<body>
-
-  <!-- Quiz menu start -->
-
-  Welcome to the Frontend Quiz!
-  Pick a subject to get started.
-
-  HTML
-  CSS
-  JavaScript
-  Accessibility
-
-  <!-- Quiz menu end -->
-
-  <!-- Quiz question start -->
-
-  Question <!-- number --> of 10
-
-  A
-  B
-  C
-  D
-
-  Submit answer
-
-  <!-- Quiz question end -->
-
-  <!-- Quiz completed start -->
-
-  Quiz completed
-  You scored...
-
-  <!-- score --> out of 10
-
-  <!-- Quiz completed end -->
-
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="styles/style.css" />
+    <title>Frontend Mentor | Frontend quiz app</title>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <header>
+      <!-- HTML Logo -->
+      <div class="html-logo-container">
+        <img class="logo" src="./assets/images/icon-html.svg" alt="" />
+        <p class="logo-text">HTML</p>
+      </div>
+      <!-- CSS Logo -->
+      <div class="css-logo-container">
+        <img class="logo" src="./assets/images/icon-css.svg" alt="" />
+        <p class="logo-text">CSS</p>
+      </div>
+      <!-- JS Logo -->
+      <div class="js-logo-container">
+        <img class="logo" src="./assets/images/icon-js.svg" alt="" />
+        <p class="logo-text">Javascript</p>
+      </div>
+      <!-- Accessibility Logo -->
+      <div class="access-logo-container">
+        <img class="logo" src="./assets/images/icon-accessibility.svg" alt="" />
+        <p class="logo-text">Accessibility</p>
+      </div>
+      <div>
+        <img src="./assets/images/icon-sun-light.svg" alt="" />
+        <div>
+          <div></div>
+          <div></div>
+        </div>
+        <img src="./assets/images/icon-moon-light.svg" alt="" />
+      </div>
+    </header>
+    <!-- Main Body -->
+    <main>
+      <!-- Quiz menu start -->
+      <div>
+        <h1>Welcome to the <strong>Frontend Quiz!</strong></h1>
+        <p>Pick a subject to get started.</p>
+      </div>
+      <div>
+        <!-- HTML Logo -->
+        <div>
+          <img src="./assets/images/icon-html.svg" alt="" />
+          <p>HTML</p>
+        </div>
+        <!-- CSS Logo -->
+        <div>
+          <img src="./assets/images/icon-css.svg" alt="" />
+          <p>CSS</p>
+        </div>
+        <!-- JS Logo -->
+        <div>
+          <img src="./assets/images/icon-js.svg" alt="" />
+          <p>Javascript</p>
+        </div>
+        <!-- Accessibility Logo -->
+        <div>
+          <img src="./assets/images/icon-accessibility.svg" alt="" />
+          <p>Accessibility</p>
+        </div>
+      </div>
+      <!-- Quiz menu end -->
+      <!-- Quiz question start -->
+      <div>
+        <p>Question 1 of 10</p>
+        <p>
+          Which of these color contrast ratios defines the minimum WCAG 2.1
+          Level AA requirement for normal text?
+        </p>
+        <progress></progress>
+      </div>
+      <div>
+        <div>
+          <div>
+            <p>A</p>
+            <p>Answer 1</p>
+          </div>
+          <img src="./assets/images/icon-correct.svg" alt="" />
+        </div>
+        <div>
+          <div>
+            <p>B</p>
+            <p>Answer 2</p>
+          </div>
+          <img src="./assets/images/icon-error.svg" alt="" />
+        </div>
+        <div>
+          <div>
+            <p>C</p>
+            <p>Answer 3</p>
+          </div>
+          <img src="./assets/images/icon-error.svg" alt="" />
+        </div>
+        <div>
+          <div>
+            <p>D</p>
+            <p>Answer 4</p>
+          </div>
+          <img src="./assets/images/icon-error.svg" alt="" />
+        </div>
+        <button>Submit answer</button>
+        <div>
+          <img src="./assets/images/icon-error.svg" alt="" />
+          <p>Please select an answer</p>
+        </div>
+      </div>
+      <!-- Quiz question end -->
+      <!-- Quiz completed start -->
+      <div>Quiz completed <strong>You scored...</strong></div>
+      <div>
+        <div>
+          <div>
+            <img src="./assets/images/icon-html.svg" alt="" />
+            <p>HTML</p>
+          </div>
+          <p>10</p>
+          <p>out of 10</p>
+        </div>
+        <button>Play Again</button>
+      </div>
+      <!-- Quiz completed end -->
+    </main>
+  </body>
 </html>

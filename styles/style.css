@@ -1,0 +1,126 @@
+/* Preliminary CSS */
+
+/* Fonts */
+
+@font-face {
+  font-family: "Rubik-Italic";
+  src: url("../assets/fonts/static/Rubik-Italic.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Rubik-Medium";
+  src: url("../assets/fonts/static/Rubik-Medium.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Rubik-Regular";
+  src: url("../assets/fonts/static/Rubik-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Rubik-Italic-VariableFont_wght";
+  src: url("../assets/fonts/Rubik-Italic-VariableFont_wght.ttf")
+    format("truetype");
+}
+
+@font-face {
+  font-family: "Rubik-VariableFont_wght";
+  src: url("../assets/fonts/Rubik-VariableFont_wght.ttf") format("truetype");
+}
+
+:root {
+  /* COLORS */
+  --White: hsl(0, 100%, 100%);
+  --Black: hsl(0, 0%, 0%);
+  --Gray-500: hsl(219, 13%, 44%);
+  --Gray-50: hsl(220, 38%, 97%);
+  --Blue-950: hsl(214, 24%, 23%);
+  --Blue-900: hsl(216, 25%, 25%);
+  --Blue-850: hsl(215, 27%, 32%);
+  --Blue-500: hsl(223, 100%, 59%);
+  --Blue-300: hsl(216, 47%, 78%);
+  --Blue-100: hsl(220, 50%, 95%);
+  --Blue-50: hsl(225, 100%, 96%);
+  --Green-500: hsl(151, 68%, 52%);
+  --Green-100: hsl(151, 88%, 94%);
+  --Purple-600: hsl(277, 91%, 56%);
+  --Purple-100: hsl(278, 100%, 95%);
+  --Orange-400: hsl(22, 100%, 60%);
+  --Orange-50: hsl(27, 100%, 96%);
+  --Red-500: hsl(0, 82%, 63%);
+
+  /* FONTS */
+  --Italic: "Rubik-Italic", serif;
+  --Medium: "Rubik-Medium", serif;
+  --Regular: "Rubik-Regular", serif;
+  --Italic-VariableFont_wght: "Rubik-Italic-VariableFont_wght", serif;
+  --VariableFont_wght: "Rubik-VariableFont_wght", serif;
+}
+
+/* Normalize CSS */
+html {
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-image: url(../assets/images/pattern-background-mobile-light.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  font-family: var(--Medium);
+  padding: 16px 24px 0 24px;
+  margin: 0 auto;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+/* Main CSS */
+
+/* Start Menu */
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 16px;
+}
+
+.html-logo-container,
+css-logo-container {
+}
