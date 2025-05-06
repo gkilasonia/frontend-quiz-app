@@ -75,13 +75,6 @@ body {
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-image: url(../assets/images/pattern-background-mobile-light.svg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  font-family: var(--Medium);
-  padding: 16px 24px 0 24px;
-  margin: 0 auto;
 }
 
 img,
@@ -112,7 +105,16 @@ ol {
 
 /* Main CSS */
 
-/* Start Menu */
+body {
+  background-image: url(../assets/images/pattern-background-mobile-light.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-color: var(--Gray-50);
+  font-family: var(--Medium);
+  padding: 16px 24px 0 24px;
+  margin: 0 auto;
+}
 
 header {
   display: flex;
@@ -121,6 +123,181 @@ header {
   padding-bottom: 16px;
 }
 
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  padding-top: 32px;
+  margin: 0 auto;
+}
+
+/* Start Menu */
+
+/* Logo container */
+
 .html-logo-container,
-css-logo-container {
+.css-logo-container,
+.js-logo-container,
+.access-logo-container {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.html-logo-container {
+  visibility: hidden;
+} /* This is for hiding the HTML logo container, however to keep the slot for it. */
+
+.css-logo-container,
+.js-logo-container,
+.access-logo-container {
+  display: none;
+} /* This is for hiding the CSS, JS and Access logo containers, however to take out of document flow. */
+
+.html-logo,
+.css-logo,
+.js-logo,
+.access-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+}
+
+.html-logo {
+  background-color: var(--Orange-50);
+  border-radius: 4px;
+} /* This is for the logo containers, to change their background */
+
+.css-logo {
+  background-color: var(--Green-100);
+  border-radius: 4px;
+}
+
+.js-logo {
+  background-color: var(--Blue-50);
+  border-radius: 4px;
+}
+
+.access-logo {
+  background-color: var(--Purple-100);
+  border-radius: 4px;
+}
+
+.logo {
+  width: 29px;
+  height: 29px;
+}
+
+.logo-text {
+  font-size: 18px;
+  color: var(--Blue-900);
+}
+
+/* Light and Dark mode container */
+
+.light-dark-mode {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.sun-light-icon,
+.sun-dark-icon,
+.moon-light-icon,
+.moon-dark-icon {
+  width: 16px;
+  height: 16px;
+}
+
+.sun-light-icon,
+.moon-light-icon {
+  display: none;
+} /* This is for controling the sun and moon light icons. */
+
+.sun-dark-icon,
+.moon-dark-icon {
+  display: inline;
+} /* This is for controling the sun and moon dark icons. */
+
+.toggle-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 32px;
+  height: 20px;
+  padding: 4px;
+  background-color: var(--Purple-600);
+  border-radius: 999px;
+}
+
+.sun-toggle,
+.night-toggle {
+  width: 12px;
+  height: 12px;
+  background-color: var(--White);
+  border-radius: 999px;
+  transition: all 0.3s ease-in-out;
+}
+
+.sun-toggle {
+  visibility: visible;
+} /* This is for controling the sun toggle. */
+
+.night-toggle {
+  visibility: hidden;
+} /* This is for controling the sun toggle. */
+
+/* Quiz menu */
+
+.quiz-menu-header {
+  display: none; /*switch this for flex*/
+  flex-direction: column;
+  gap: 16px;
+}
+
+.header {
+  font-family: var(--VariableFont_wght);
+  font-weight: 300;
+  font-size: 40px;
+  line-height: 100%;
+  color: var(--Blue-900);
+}
+
+.strong-header {
+  font-family: var(--Medium);
+  font-style: normal;
+  font-weight: 500;
+}
+
+.header-text {
+  font-family: var(--Italic);
+  font-size: 14px;
+  color: var(--Gray-500);
+}
+
+.subjects-container {
+  display: none; /*switch this for flex*/
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px;
+  background-color: var(--White);
+  border-radius: 12px;
+}
+
+/* Quiz question */
+
+.quiz-question-container {
+  display: flex;
 }
