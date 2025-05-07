@@ -72,7 +72,6 @@ html {
 }
 
 body {
-  line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -300,4 +299,30 @@ main {
 
 .quiz-question-container {
   display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.question-text {
+  font-size: 20px;
+  line-height: 120%;
+  color: var(--Blue-900);
+}
+
+.progress-bar {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 100%;
+}
+
+progress::-webkit-progress-bar {
+  background-color: var(--White);
+  padding: 4px;
+  height: 16px;
+  border-radius: 999px;
+}
+progress::-webkit-progress-value {
+  background-color: var(--Purple-600);
+  height: 8px;
+  border-radius: 999px;
 }
