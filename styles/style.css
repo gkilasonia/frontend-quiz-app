@@ -90,6 +90,7 @@ button,
 textarea,
 select {
   font: inherit;
+  border: none;
 }
 
 a {
@@ -298,7 +299,7 @@ main {
 /* Quiz question */
 
 .quiz-question-container {
-  display: flex;
+  display: none; /*switch this for flex*/
   flex-direction: column;
   gap: 16px;
 }
@@ -313,6 +314,7 @@ main {
   appearance: none;
   -webkit-appearance: none;
   width: 100%;
+  padding-top: 8px;
 }
 
 progress::-webkit-progress-bar {
@@ -325,4 +327,95 @@ progress::-webkit-progress-value {
   background-color: var(--Purple-600);
   height: 8px;
   border-radius: 999px;
+}
+
+/* Quiz answer */
+
+.quiz-answers-container {
+  display: none; /*switch this for flex*/
+  flex-direction: column;
+  justify-content: center;
+  gap: 16px;
+  width: 100%;
+}
+
+.answer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  background-color: var(--White);
+  border-radius: 12px;
+}
+
+.answer-container:hover {
+  border: 3px solid var(--Purple-600);
+  padding: 13px 13px;
+  cursor: pointer;
+}
+
+.answer-text-container {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.variants {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background-color: var(--Gray-50);
+  border-radius: 6px;
+  font-size: 18px;
+  color: var(--Gray-500);
+}
+
+.answer-text {
+  font-size: 18px;
+  line-height: 120%;
+  color: var(--Blue-900);
+}
+
+.correct-incorrect {
+  width: 32px;
+  visibility: hidden; /* make visibility unset */
+}
+
+/* Submit answer button */
+
+.submit-answer-button {
+  padding: 19px;
+  background-color: var(--Purple-600);
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 100%;
+  color: var(--White);
+}
+
+.submit-answer-button:hover {
+  opacity: 50%;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Error message */
+
+.error-message-container {
+  visibility: hidden; /* make visibility unset */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.error-icon {
+  width: 32px;
+}
+
+.error-text {
+  font-size: 18px;
+  color: var(--Red-500);
 }
