@@ -133,67 +133,35 @@ main {
   margin: 0 auto;
 }
 
-/* Start Menu */
+/* Navbar */
 
 /* Logo container */
 
-.html-logo-container,
-.css-logo-container,
-.js-logo-container,
-.access-logo-container {
+.logo-container {
   display: flex;
   align-items: center;
   gap: 16px;
+  visibility: visible; /* This is for hiding the logo container, however to keep the slot for it. */
 }
 
-.html-logo-container {
-  visibility: hidden;
-} /* This is for hiding the HTML logo container, however to keep the slot for it. */
-
-.css-logo-container,
-.js-logo-container,
-.access-logo-container {
-  display: none;
-} /* This is for hiding the CSS, JS and Access logo containers, however to take out of document flow. */
-
-.html-logo,
-.css-logo,
-.js-logo,
-.access-logo {
+.logo {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 40px;
   height: 40px;
-}
-
-.html-logo {
-  background-color: var(--Orange-50);
   border-radius: 4px;
-} /* This is for the logo containers, to change their background */
-
-.css-logo {
-  background-color: var(--Green-100);
-  border-radius: 4px;
-}
-
-.js-logo {
-  background-color: var(--Blue-50);
-  border-radius: 4px;
-}
-
-.access-logo {
   background-color: var(--Purple-100);
-  border-radius: 4px;
 }
 
-.logo {
+.logo-image {
   width: 29px;
   height: 29px;
 }
 
 .logo-text {
   font-size: 18px;
+  line-height: 100%;
   color: var(--Blue-900);
 }
 
@@ -252,12 +220,24 @@ main {
   visibility: hidden;
 } /* This is for controling the sun toggle. */
 
+/* Welcome */
+
+.welcome-container {
+  display: flex; /*switch this for flex*/
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  width: 100%;
+}
+
 /* Quiz menu */
 
 .quiz-menu-header {
-  display: none; /*switch this for flex*/
+  display: flex;
   flex-direction: column;
   gap: 16px;
+  width: 100%;
 }
 
 .header {
@@ -272,22 +252,29 @@ main {
   font-family: var(--Medium);
   font-style: normal;
   font-weight: 500;
+  line-height: 1.2;
 }
 
 .header-text {
   font-family: var(--Italic);
   font-size: 14px;
   color: var(--Gray-500);
+  line-height: 1.5;
 }
 
+/* Subject container */
+
 .subjects-container {
-  display: none; /*switch this for flex*/
+  display: flex;
   flex-direction: column;
   gap: 16px;
   width: 100%;
 }
 
-.logo-container {
+.html-logo-container,
+.css-logo-container,
+.js-logo-container,
+.access-logo-container {
   display: flex;
   align-items: center;
   gap: 16px;
@@ -296,10 +283,21 @@ main {
   border-radius: 12px;
 }
 
+/* Main quiz */
+
+.main-quiz-container {
+  display: flex; /*switch this for flex*/
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  width: 100%;
+}
+
 /* Quiz question */
 
 .quiz-question-container {
-  display: none; /*switch this for flex*/
+  display: flex;
   flex-direction: column;
   gap: 16px;
 }
@@ -308,13 +306,13 @@ main {
   font-size: 20px;
   line-height: 120%;
   color: var(--Blue-900);
+  padding-bottom: 8px;
 }
 
 .progress-bar {
   appearance: none;
   -webkit-appearance: none;
   width: 100%;
-  padding-top: 8px;
 }
 
 progress::-webkit-progress-bar {
@@ -332,7 +330,7 @@ progress::-webkit-progress-value {
 /* Quiz answer */
 
 .quiz-answers-container {
-  display: none; /*switch this for flex*/
+  display: flex;
   flex-direction: column;
   justify-content: center;
   gap: 16px;
@@ -348,11 +346,11 @@ progress::-webkit-progress-value {
   border-radius: 12px;
 }
 
-.answer-container:hover {
+/* .answer-container:hover {
   border: 3px solid var(--Purple-600);
   padding: 13px 13px;
   cursor: pointer;
-}
+} */
 
 .answer-text-container {
   display: flex;
@@ -374,13 +372,13 @@ progress::-webkit-progress-value {
 
 .answer-text {
   font-size: 18px;
-  line-height: 120%;
+  line-height: 1;
   color: var(--Blue-900);
 }
 
 .correct-incorrect {
   width: 32px;
-  visibility: hidden; /* make visibility unset */
+  visibility: visible; /* make visibility unset */
 }
 
 /* Submit answer button */
@@ -396,15 +394,15 @@ progress::-webkit-progress-value {
   color: var(--White);
 }
 
-.submit-answer-button:hover {
+/* .submit-answer-button:hover {
   opacity: 50%;
   transition: all 0.3s ease-in-out;
-}
+} */
 
 /* Error message */
 
 .error-message-container {
-  visibility: hidden; /* make visibility unset */
+  visibility: visible; /* make visibility unset */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -417,5 +415,507 @@ progress::-webkit-progress-value {
 
 .error-text {
   font-size: 18px;
+  line-height: 1;
   color: var(--Red-500);
+}
+
+/* Final result */
+
+.final-result-container {
+  display: flex; /*switch this for flex*/
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  width: 100%;
+}
+
+/* Result */
+
+.result-score {
+  font-family: var(--VariableFont_wght);
+  font-weight: 300;
+  font-size: 40px;
+  line-height: 100%;
+  color: var(--Blue-900);
+  width: 100%;
+}
+
+.strong {
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.result-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 16px;
+}
+
+.score-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  background-color: var(--White);
+  border-radius: 12px;
+  padding: 32px 0px;
+}
+
+.score {
+  font-weight: 500;
+  font-size: 88px;
+  line-height: 100%;
+  color: var(--Blue-900);
+}
+
+.out-of-nmb-text {
+  font-size: 18px;
+  line-height: 100%;
+  color: var(--Gray-500);
+}
+
+.play-again-btn {
+  font-size: 18px;
+  line-height: 100%;
+  background-color: var(--Purple-600);
+  color: var(--White);
+  border-radius: 12px;
+  padding: 19px 0px;
+}
+
+/* Tablet size */
+
+@media only screen and (min-width: 577px) and (max-width: 1024px) {
+  /* Main CSS */
+
+  body {
+    background-image: url(../assets/images/pattern-background-desktop-light.svg);
+    padding: 40px 64px 0 64px;
+  }
+
+  header {
+    padding-bottom: 49px;
+  }
+
+  main {
+    gap: 64px;
+    padding-top: 0px;
+  }
+
+  /* Navbar */
+
+  /* Logo container */
+
+  .logo-container {
+    gap: 24px;
+  }
+
+  .logo {
+    width: 56px;
+    height: 56px;
+    border-radius: 8px;
+  }
+
+  .logo-image {
+    width: 40px;
+    height: 40px;
+  }
+
+  .logo-text {
+    font-size: 28px;
+  }
+
+  /* Light and Dark mode container */
+
+  .light-dark-mode {
+    gap: 16px;
+  }
+
+  .sun-light-icon,
+  .sun-dark-icon,
+  .moon-light-icon,
+  .moon-dark-icon {
+    width: 24px;
+    height: 24px;
+  }
+
+  .toggle-container {
+    width: 48px;
+    height: 28px;
+  }
+
+  .sun-toggle,
+  .night-toggle {
+    width: 20px;
+    height: 20px;
+  }
+
+  /* Welcome */
+
+  .welcome-container {
+    gap: 64px;
+  }
+
+  /* Quiz menu */
+
+  .header {
+    font-size: 64px;
+  }
+
+  .strong-header {
+    line-height: 1.125;
+  }
+
+  .header-text {
+    font-size: 20px;
+    line-height: 1.5;
+  }
+
+  /* Subject container */
+
+  .subjects-container {
+    gap: 24px;
+  }
+
+  .html-logo-container,
+  .css-logo-container,
+  .js-logo-container,
+  .access-logo-container {
+    gap: 32px;
+    border-radius: 24px;
+  }
+
+  /* Quiz question */
+
+  .quiz-question-container {
+    gap: 24px;
+  }
+
+  .question-text {
+    font-size: 36px;
+    padding-bottom: 16px;
+    line-height: 1.1945;
+  }
+
+  /* Quiz answer */
+
+  .quiz-answers-container {
+    margin-top: -24px;
+    gap: 24px;
+  }
+
+  .answer-container {
+    border-radius: 24px;
+  }
+
+  .answer-text-container {
+    gap: 32px;
+  }
+
+  .variants {
+    width: 56px;
+    height: 56px;
+    border-radius: 12px;
+    font-size: 28px;
+  }
+
+  .answer-text {
+    font-size: 28px;
+  }
+
+  .correct-incorrect {
+    width: 40px;
+  }
+
+  /* Submit answer button */
+
+  .submit-answer-button {
+    margin: 8px 0px;
+    padding: 32px;
+    border-radius: 24px;
+    font-size: 28px;
+  }
+
+  /* Error message */
+
+  .error-icon {
+    width: 40px;
+  }
+
+  .error-text {
+    font-size: 24px;
+    line-height: 1.5;
+  }
+
+  /* Final result */
+
+  .final-result-container {
+    gap: 64px;
+  }
+
+  /* Result */
+
+  .result-score {
+    font-size: 64px;
+  }
+
+  .strong {
+    line-height: 1.125;
+  }
+
+  .result-container {
+    gap: 32px;
+  }
+
+  .score-container {
+    gap: 40px;
+    border-radius: 24px;
+    padding: 48px 0px;
+  }
+
+  .score {
+    font-size: 144px;
+    margin-bottom: -24px;
+  }
+
+  .out-of-nmb-text {
+    font-size: 24px;
+    line-height: 1.5;
+  }
+
+  .play-again-btn {
+    font-size: 28px;
+    border-radius: 24px;
+    padding: 32px 0px;
+  }
+}
+
+/* Desktop size */
+
+@media only screen and (min-width: 1025px) {
+  /* Main CSS */
+
+  body {
+    background-image: url(../assets/images/pattern-background-tablet-light.svg);
+    padding: 83px 140px 0 140px;
+  }
+
+  header {
+    padding-bottom: 85px;
+  }
+
+  main {
+    gap: 64px;
+    padding-top: 0px;
+  }
+
+  /* Navbar */
+
+  /* Logo container */
+
+  .logo-container {
+    gap: 24px;
+  }
+
+  .logo {
+    width: 56px;
+    height: 56px;
+    border-radius: 8px;
+  }
+
+  .logo-image {
+    width: 40px;
+    height: 40px;
+  }
+
+  .logo-text {
+    font-size: 28px;
+  }
+
+  /* Light and Dark mode container */
+
+  .light-dark-mode {
+    gap: 16px;
+  }
+
+  .sun-light-icon,
+  .sun-dark-icon,
+  .moon-light-icon,
+  .moon-dark-icon {
+    width: 24px;
+    height: 24px;
+  }
+
+  .toggle-container {
+    width: 48px;
+    height: 28px;
+  }
+
+  .sun-toggle,
+  .night-toggle {
+    width: 20px;
+    height: 20px;
+  }
+
+  /* Welcome */
+
+  .welcome-container {
+    display: grid;
+    grid-template-columns: 40.0863% 1fr;
+    column-gap: 128px;
+  }
+
+  /* Quiz menu */
+
+  .quiz-menu-header {
+    align-self: flex-start;
+    gap: 48px;
+  }
+
+  .header {
+    font-size: 64px;
+  }
+
+  .strong-header {
+    line-height: 1.125;
+  }
+
+  .header-text {
+    font-size: 20px;
+    line-height: 1.5;
+  }
+
+  /* Subject container */
+
+  .subjects-container {
+    gap: 16px;
+  }
+
+  .html-logo-container,
+  .css-logo-container,
+  .js-logo-container,
+  .access-logo-container {
+    gap: 32px;
+    padding: 24px;
+    border-radius: 24px;
+  }
+
+  /* Main quiz */
+
+  .main-quiz-container {
+    display: grid;
+    grid-template-columns: 40.0863% 1fr;
+    column-gap: 128px;
+  }
+
+  /* Quiz question */
+
+  .quiz-question-container {
+    align-self: flex-start;
+    gap: 24px;
+  }
+
+  .question-text {
+    font-size: 36px;
+    padding-bottom: 0px;
+    line-height: 1.1945;
+  }
+
+  /* Quiz answer */
+
+  .quiz-answers-container {
+    gap: 16px;
+  }
+
+  .answer-container {
+    padding: 24px;
+    border-radius: 24px;
+  }
+
+  .answer-text-container {
+    gap: 32px;
+  }
+
+  .variants {
+    width: 56px;
+    height: 56px;
+    border-radius: 12px;
+    font-size: 28px;
+  }
+
+  .answer-text {
+    font-size: 28px;
+  }
+
+  .correct-incorrect {
+    width: 40px;
+  }
+
+  /* Submit answer button */
+
+  .submit-answer-button {
+    margin: 16px 0px;
+    padding: 32px;
+    border-radius: 24px;
+    font-size: 28px;
+  }
+
+  /* Error message */
+
+  .error-icon {
+    width: 40px;
+  }
+
+  .error-text {
+    font-size: 24px;
+    line-height: 1.5;
+  }
+
+  /* Final result */
+
+  .final-result-container {
+    display: grid;
+    grid-template-columns: 38.7932% 1fr;
+    column-gap: 143px;
+  }
+
+  /* Result */
+
+  .result-score {
+    align-self: flex-start;
+    font-size: 64px;
+  }
+
+  .strong {
+    line-height: 1.125;
+  }
+
+  .result-container {
+    gap: 32px;
+  }
+
+  .score-container {
+    gap: 40px;
+    border-radius: 24px;
+    padding: 48px 0px;
+  }
+
+  .score {
+    font-size: 144px;
+    margin-bottom: -24px;
+  }
+
+  .out-of-nmb-text {
+    font-size: 24px;
+    line-height: 1.5;
+  }
+
+  .play-again-btn {
+    font-size: 28px;
+    border-radius: 24px;
+    padding: 32px 0px;
+  }
 }

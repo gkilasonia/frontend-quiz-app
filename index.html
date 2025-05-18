@@ -15,32 +15,11 @@
   <body>
     <!-- Navbar -->
     <header>
-      <!-- HTML Logo -->
-      <div class="html-logo-container">
-        <div class="html-logo">
-          <img class="logo" src="./assets/images/icon-html.svg" alt="" />
-        </div>
-        <p class="logo-text">HTML</p>
-      </div>
-      <!-- CSS Logo -->
-      <div class="css-logo-container">
-        <div class="css-logo">
-          <img class="logo" src="./assets/images/icon-css.svg" alt="" />
-        </div>
-        <p class="logo-text">CSS</p>
-      </div>
-      <!-- JS Logo -->
-      <div class="js-logo-container">
-        <div class="js-logo">
-          <img class="logo" src="./assets/images/icon-js.svg" alt="" />
-        </div>
-        <p class="logo-text">Javascript</p>
-      </div>
-      <!-- Accessibility Logo -->
-      <div class="access-logo-container">
-        <div class="access-logo">
+      <!-- Logo -->
+      <div class="logo-container">
+        <div class="logo">
           <img
-            class="logo"
+            class="logo-image"
             src="./assets/images/icon-accessibility.svg"
             alt=""
           />
@@ -78,124 +57,157 @@
     <!-- Main Body -->
     <main>
       <!-- Quiz menu start -->
-      <div class="quiz-menu-header">
-        <h1 class="header">
-          Welcome to the <strong class="strong-header">Frontend Quiz!</strong>
-        </h1>
-        <em class="header-text">Pick a subject to get started.</em>
-      </div>
-      <div class="subjects-container">
-        <!-- HTML Logo -->
-        <div class="logo-container">
-          <div class="html-logo">
-            <img class="logo" src="./assets/images/icon-html.svg" alt="" />
-          </div>
-          <p class="logo-text">HTML</p>
+      <div class="welcome-container">
+        <div class="quiz-menu-header">
+          <h1 class="header">
+            Welcome to the <br />
+            <strong class="strong-header">Frontend Quiz!</strong>
+          </h1>
+          <em class="header-text">Pick a subject to get started.</em>
         </div>
-        <!-- CSS Logo -->
-        <div class="logo-container">
-          <div class="css-logo">
-            <img class="logo" src="./assets/images/icon-css.svg" alt="" />
+        <div class="subjects-container">
+          <!-- HTML Logo -->
+          <div class="html-logo-container">
+            <div class="logo">
+              <img
+                class="logo-image"
+                src="./assets/images/icon-html.svg"
+                alt=""
+              />
+            </div>
+            <p class="logo-text">HTML</p>
           </div>
-          <p class="logo-text">CSS</p>
-        </div>
-        <!-- JS Logo -->
-        <div class="logo-container">
-          <div class="js-logo">
-            <img class="logo" src="./assets/images/icon-js.svg" alt="" />
+          <!-- CSS Logo -->
+          <div class="css-logo-container">
+            <div class="logo">
+              <img
+                class="logo-image"
+                src="./assets/images/icon-css.svg"
+                alt=""
+              />
+            </div>
+            <p class="logo-text">CSS</p>
           </div>
-          <p class="logo-text">Javascript</p>
-        </div>
-        <!-- Accessibility Logo -->
-        <div class="logo-container">
-          <div class="access-logo">
-            <img
-              class="logo"
-              src="./assets/images/icon-accessibility.svg"
-              alt=""
-            />
+          <!-- JS Logo -->
+          <div class="js-logo-container">
+            <div class="logo">
+              <img
+                class="logo-image"
+                src="./assets/images/icon-js.svg"
+                alt=""
+              />
+            </div>
+            <p class="logo-text">Javascript</p>
           </div>
-          <p class="logo-text">Accessibility</p>
+          <!-- Accessibility Logo -->
+          <div class="access-logo-container">
+            <div class="logo">
+              <img
+                class="logo-image"
+                src="./assets/images/icon-accessibility.svg"
+                alt=""
+              />
+            </div>
+            <p class="logo-text">Accessibility</p>
+          </div>
         </div>
       </div>
       <!-- Quiz menu end -->
       <!-- Quiz question start -->
-      <div class="quiz-question-container">
-        <em class="header-text">Question 6 of 10</em>
-        <p class="question-text">
-          Which of these color contrast ratios defines the minimum WCAG 2.1
-          Level AA requirement for normal text?
-        </p>
-        <progress class="progress-bar" max="10" value="6"></progress>
-      </div>
-      <!-- Quiz question end -->
-      <!-- Quiz answer start -->
-      <div class="quiz-answers-container">
-        <div class="answer-container">
-          <div class="answer-text-container">
-            <p class="variants">A</p>
-            <p class="answer-text">Answer 1</p>
-          </div>
-          <img
-            class="correct-incorrect"
-            src="./assets/images/icon-correct.svg"
-            alt=""
-          />
+      <div class="main-quiz-container">
+        <div class="quiz-question-container">
+          <em class="header-text">Question 6 of 10</em>
+          <p class="question-text">
+            Which of these color contrast ratios defines the minimum WCAG 2.1
+            Level AA requirement for normal text?
+          </p>
+          <progress class="progress-bar" max="10" value="6"></progress>
         </div>
-        <div class="answer-container">
-          <div class="answer-text-container">
-            <p class="variants">B</p>
-            <p class="answer-text">Answer 2</p>
+        <!-- Quiz question end -->
+        <!-- Quiz answer start -->
+        <div class="quiz-answers-container">
+          <div class="answer-container">
+            <div class="answer-text-container">
+              <p class="variants">A</p>
+              <p class="answer-text">Answer 1</p>
+            </div>
+            <img
+              class="correct-incorrect"
+              src="./assets/images/icon-correct.svg"
+              alt=""
+            />
           </div>
-          <img
-            class="correct-incorrect"
-            src="./assets/images/icon-error.svg"
-            alt=""
-          />
-        </div>
-        <div class="answer-container">
-          <div class="answer-text-container">
-            <p class="variants">C</p>
-            <p class="answer-text">Answer 3</p>
+          <div class="answer-container">
+            <div class="answer-text-container">
+              <p class="variants">B</p>
+              <p class="answer-text">Answer 2</p>
+            </div>
+            <img
+              class="correct-incorrect"
+              src="./assets/images/icon-error.svg"
+              alt=""
+            />
           </div>
-          <img
-            class="correct-incorrect"
-            src="./assets/images/icon-error.svg"
-            alt=""
-          />
-        </div>
-        <div class="answer-container">
-          <div class="answer-text-container">
-            <p class="variants">D</p>
-            <p class="answer-text">Answer 4</p>
+          <div class="answer-container">
+            <div class="answer-text-container">
+              <p class="variants">C</p>
+              <p class="answer-text">Answer 3</p>
+            </div>
+            <img
+              class="correct-incorrect"
+              src="./assets/images/icon-error.svg"
+              alt=""
+            />
           </div>
-          <img
-            class="correct-incorrect"
-            src="./assets/images/icon-error.svg"
-            alt=""
-          />
-        </div>
-        <button class="submit-answer-button">Submit Answer</button>
-        <div class="error-message-container">
-          <img class="error-icon" src="./assets/images/icon-error.svg" alt="" />
-          <p class="error-text">Please select an answer</p>
+          <div class="answer-container">
+            <div class="answer-text-container">
+              <p class="variants">D</p>
+              <p class="answer-text">Answer 4</p>
+            </div>
+            <img
+              class="correct-incorrect"
+              src="./assets/images/icon-error.svg"
+              alt=""
+            />
+          </div>
+          <button class="submit-answer-button">Submit Answer</button>
+          <div class="error-message-container">
+            <img
+              class="error-icon"
+              src="./assets/images/icon-error.svg"
+              alt=""
+            />
+            <p class="error-text">Please select an answer</p>
+          </div>
         </div>
       </div>
       <!-- Quiz answer end -->
       <!-- Quiz completed start -->
-      <div>Quiz completed <strong>You scored...</strong></div>
-      <div>
-        <div>
-          <div>
-            <img src="./assets/images/icon-html.svg" alt="" />
-            <p>HTML</p>
-          </div>
-          <p>10</p>
-          <p>out of 10</p>
+      <div class="final-result-container">
+        <div class="result-score">
+          Quiz completed <br />
+          <strong class="strong">You scored...</strong>
         </div>
-        <button>Play Again</button>
+        <div class="result-container">
+          <div class="score-container">
+            <div class="logo-container">
+              <div class="logo">
+                <img
+                  class="logo-image"
+                  src="./assets/images/icon-accessibility.svg"
+                  alt=""
+                />
+              </div>
+              <p class="logo-text">Accessibility</p>
+            </div>
+            <p class="score">8</p>
+            <p class="out-of-nmb-text">out of 10</p>
+          </div>
+          <button class="play-again-btn">Play Again</button>
+        </div>
       </div>
       <!-- Quiz completed end -->
     </main>
+    <script type="module" src="script.js"></script>
   </body>
 </html>
