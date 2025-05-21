@@ -16,39 +16,32 @@
     <!-- Navbar -->
     <header>
       <!-- Logo -->
-      <div class="logo-container">
+      <div id="logo-container" class="logo-container">
         <div class="logo">
           <img
+            id="logo-image"
             class="logo-image"
             src="./assets/images/icon-accessibility.svg"
             alt=""
           />
         </div>
-        <p class="logo-text">Accessibility</p>
+        <p id="logo-text" class="logo-text">Accessibility</p>
       </div>
       <!-- Light Dark mode toggler -->
       <div class="light-dark-mode">
         <img
-          class="sun-light-icon"
-          src="./assets/images/icon-sun-light.svg"
-          alt=""
-        />
-        <img
-          class="sun-dark-icon"
+          id="sun-icon"
+          class="sun-icon"
           src="./assets/images/icon-sun-dark.svg"
           alt=""
         />
         <div class="toggle-container">
-          <div class="sun-toggle"></div>
-          <div class="night-toggle"></div>
+          <div id="sun-toggle" class="sun-toggle"></div>
+          <div id="moon-toggle" class="moon-toggle"></div>
         </div>
         <img
-          class="moon-light-icon"
-          src="./assets/images/icon-moon-light.svg"
-          alt=""
-        />
-        <img
-          class="moon-dark-icon"
+          id="moon-icon"
+          class="moon-icon"
           src="./assets/images/icon-moon-dark.svg"
           alt=""
         />
@@ -57,7 +50,7 @@
     <!-- Main Body -->
     <main>
       <!-- Quiz menu start -->
-      <div class="welcome-container">
+      <div id="welcome-container" class="welcome-container">
         <div class="quiz-menu-header">
           <h1 class="header">
             Welcome to the <br />
@@ -67,7 +60,7 @@
         </div>
         <div class="subjects-container">
           <!-- HTML Logo -->
-          <div class="html-logo-container">
+          <div id="html-logo-container" class="html-logo-container">
             <div class="logo">
               <img
                 class="logo-image"
@@ -78,7 +71,7 @@
             <p class="logo-text">HTML</p>
           </div>
           <!-- CSS Logo -->
-          <div class="css-logo-container">
+          <div id="css-logo-container" class="css-logo-container">
             <div class="logo">
               <img
                 class="logo-image"
@@ -89,7 +82,7 @@
             <p class="logo-text">CSS</p>
           </div>
           <!-- JS Logo -->
-          <div class="js-logo-container">
+          <div id="js-logo-container" class="js-logo-container">
             <div class="logo">
               <img
                 class="logo-image"
@@ -100,7 +93,7 @@
             <p class="logo-text">Javascript</p>
           </div>
           <!-- Accessibility Logo -->
-          <div class="access-logo-container">
+          <div id="access-logo-container" class="access-logo-container">
             <div class="logo">
               <img
                 class="logo-image"
@@ -114,14 +107,21 @@
       </div>
       <!-- Quiz menu end -->
       <!-- Quiz question start -->
-      <div class="main-quiz-container">
+      <div id="main-quiz-container" class="main-quiz-container">
         <div class="quiz-question-container">
-          <em class="header-text">Question 6 of 10</em>
-          <p class="question-text">
+          <em class="header-text"
+            >Question <span id="question-current-number">6</span> of 10</em
+          >
+          <p id="question-text" class="question-text">
             Which of these color contrast ratios defines the minimum WCAG 2.1
             Level AA requirement for normal text?
           </p>
-          <progress class="progress-bar" max="10" value="6"></progress>
+          <progress
+            id="progress-bar"
+            class="progress-bar"
+            max="10"
+            value="6"
+          ></progress>
         </div>
         <!-- Quiz question end -->
         <!-- Quiz answer start -->
@@ -129,7 +129,7 @@
           <div class="answer-container">
             <div class="answer-text-container">
               <p class="variants">A</p>
-              <p class="answer-text">Answer 1</p>
+              <p id="answer-text" class="answer-text">Answer 1</p>
             </div>
             <img
               class="correct-incorrect"
@@ -170,8 +170,10 @@
               alt=""
             />
           </div>
-          <button class="submit-answer-button">Submit Answer</button>
-          <div class="error-message-container">
+          <button id="submit-answer-button" class="submit-answer-button">
+            Submit Answer
+          </button>
+          <div id="error-message-container" class="error-message-container">
             <img
               class="error-icon"
               src="./assets/images/icon-error.svg"
@@ -183,7 +185,7 @@
       </div>
       <!-- Quiz answer end -->
       <!-- Quiz completed start -->
-      <div class="final-result-container">
+      <div id="final-result-container" class="final-result-container">
         <div class="result-score">
           Quiz completed <br />
           <strong class="strong">You scored...</strong>
@@ -193,17 +195,18 @@
             <div class="logo-container">
               <div class="logo">
                 <img
+                  id="logo-image"
                   class="logo-image"
                   src="./assets/images/icon-accessibility.svg"
                   alt=""
                 />
               </div>
-              <p class="logo-text">Accessibility</p>
+              <p id="logo-text" class="logo-text">Accessibility</p>
             </div>
-            <p class="score">8</p>
+            <p id="score" class="score">8</p>
             <p class="out-of-nmb-text">out of 10</p>
           </div>
-          <button class="play-again-btn">Play Again</button>
+          <button id="play-again-btn" class="play-again-btn">Play Again</button>
         </div>
       </div>
       <!-- Quiz completed end -->

@@ -174,23 +174,11 @@ main {
   gap: 8px;
 }
 
-.sun-light-icon,
-.sun-dark-icon,
-.moon-light-icon,
-.moon-dark-icon {
+.sun-icon,
+.moon-icon {
   width: 16px;
   height: 16px;
 }
-
-.sun-light-icon,
-.moon-light-icon {
-  display: none;
-} /* This is for controling the sun and moon light icons. */
-
-.sun-dark-icon,
-.moon-dark-icon {
-  display: inline;
-} /* This is for controling the sun and moon dark icons. */
 
 .toggle-container {
   display: flex;
@@ -204,7 +192,7 @@ main {
 }
 
 .sun-toggle,
-.night-toggle {
+.moon-toggle {
   width: 12px;
   height: 12px;
   background-color: var(--White);
@@ -216,7 +204,7 @@ main {
   visibility: visible;
 } /* This is for controling the sun toggle. */
 
-.night-toggle {
+.moon-toggle {
   visibility: hidden;
 } /* This is for controling the sun toggle. */
 
