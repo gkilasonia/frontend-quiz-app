@@ -30,100 +30,139 @@ const playAgainButton = document.getElementById("play-again-btn"); //Restart the
 
 const correctIncorrectIcon = document.querySelectorAll(".correct-incorrect"); // Change visibility of img from visible to hidden and change icon (correct; inccorect)
 
-const htmlLogoUrl = "./assets/images/icon-html.svg";
-const cssLogoUrl = "./assets/images/icon-css.svg";
-const jsLogoUrl = "./assets/images/icon-js.svg";
-const accessLogoUrl = "./assets/images/icon-accessibility.svg";
-
 let myDatabaseData = null;
+const mediaQuery = "(min-width: 1025px)";
+const mediaQueryList = window.matchMedia(mediaQuery);
 
-async function fetchDataOnce() {
+document.addEventListener("DOMContentLoaded", async () => {
+  const customButtons = document.querySelectorAll('[role="button"]');
+
   try {
     const response = await fetch("./data.json");
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
     }
 
-    const data = await response.json();
-    myDatabaseData = data;
-
-    const mediaQuery = "(min-width: 1025px)";
-    const mediaQueryList = window.matchMedia(mediaQuery);
-
-    let qustionNumber = 1;
-    let question = myDatabaseData.quizzes[0].questions[0].question;
-    let answers = myDatabaseData.quizzes[0].questions[0].options;
-
-    console.log(
-      "Data fetched and stored:",
-      myDatabaseData.quizzes[0].questions[0]
-    );
-
-    htmlLogoContainer.addEventListener("click", () => {
-      openHtmlQuiz();
-    });
-
-    function openHtmlQuiz() {
-      logoContainer.style.visibility = "visible";
-      welcomeContainer.style.display = "none";
-      mainQuizContainer.style.display = mediaQueryList ? "grid" : "flex";
-      finalResultContainer.style.display = "none";
-      logoImage.src = htmlLogoUrl;
-      logoText.innerText = "HTML";
-      questionCurrentNumber.innerText = qustionNumber;
-      questionText.innerText = question;
-      answerTextA.innerText = answers[0];
-      answerTextB.innerText = answers[1];
-      answerTextC.innerText = answers[2];
-      answerTextD.innerText = answers[3];
-    }
-
-    processData();
+    myDatabaseData = await response.json();
+    console.log("Data fetched and stored:", myDatabaseData);
   } catch (error) {
     console.error("Error fetching data:", error);
   }
-}
 
-function processData() {
-  if (myDatabaseData) {
-    console.log("Processing data:", myDatabaseData);
-  } else {
-    console.log("Data not yet available");
-  }
-}
+  customButtons.forEach((button) => {
+    button.addEventListener("click", (event) => {
+      const buttonText = button.querySelector("p").textContent;
+      if (buttonText === "HTML") {
+        openHtmlQuiz(myDatabaseData.quizzes[0]);
+      } else if (buttonText === "CSS") {
+        openCssQuiz(myDatabaseData.quizzes[1]);
+      } else if (buttonText === "Javascript") {
+        openJsQuiz(myDatabaseData.quizzes[2]);
+      } else if (buttonText === "Accessibility") {
+        openAccessQuiz(myDatabaseData.quizzes[3]);
+      }
+      // console.log(`Custom button "${buttonText}" clicked!`);
+    });
 
-fetchDataOnce();
-
-cssLogoContainer.addEventListener("click", () => {
-  openCssQuiz();
+    button.addEventListener("keydown", (event) => {
+      if (event.key === "Enter" || event.key === " ") {
+        event.preventDefault();
+        button.click();
+      }
+    });
+  });
 });
-jsLogoContainer.addEventListener("click", () => {
-  openJsQuiz();
-});
-accessLogoContainer.addEventListener("click", () => {
-  openAccessQuiz();
-});
 
-function openCssQuiz() {
+function openHtmlQuiz(htmlData) {
   logoContainer.style.visibility = "visible";
   welcomeContainer.style.display = "none";
-  mainQuizContainer.style.display = "flex";
-  logoImage.src = "./assets/images/icon-css.svg";
-  logoText.innerText = "CSS";
+  mainQuizContainer.style.display = mediaQueryList.matches ? "grid" : "flex";
+  // Logic with data
+  logoImage.src = htmlData.icon;
+  logoText.innerText = htmlData.title;
+  questionText.innerText = htmlData.questions[0].question;
+  questionCurrentNumber.innerText = htmlData.questions.length - 9;
+  progressBar.value = htmlData.questions.length - 9;
+  answerTextA.innerText = htmlData.questions[0].options[0];
+  answerTextB.innerText = htmlData.questions[0].options[1];
+  answerTextC.innerText = htmlData.questions[0].options[2];
+  answerTextD.innerText = htmlData.questions[0].options[3];
+  console.log(htmlData.questions[0].answer);
+  // Logic for answer buttons
+  const answerText = document.querySelectorAll(".answer-text");
+  answerText.forEach((button) => {
+    button.addEventListener("click", (event) => {
+      submitButton.addEventListener("click", () => {
+        const buttonText = button.textContent;
+        console.log(buttonText);
+        if (buttonText === htmlData.questions[0].answer) {
+          console.log(buttonText);
+          console.log("It is correct");
+          button.style.color = "red";
+          button.classList.add("correct-answer-outline"); //I stopped here
+        } else {
+          console.log(buttonText);
+          console.log("answer is Incorrect");
+        }
+      });
+    });
+
+    button.addEventListener("keydown", (event) => {
+      if (event.key === "Enter" || event.key === " ") {
+        event.preventDefault();
+        button.click();
+      }
+    });
+  });
 }
 
-function openJsQuiz() {
+function openCssQuiz(cssData) {
   logoContainer.style.visibility = "visible";
   welcomeContainer.style.display = "none";
-  mainQuizContainer.style.display = "flex";
-  logoImage.src = "./assets/images/icon-js.svg";
-  logoText.innerText = "Javascript";
+  mainQuizContainer.style.display = mediaQueryList.matches ? "grid" : "flex";
+  // Logic with data
+  logoImage.src = cssData.icon;
+  logoText.innerText = cssData.title;
+  questionText.innerText = cssData.questions[0].question;
+  questionCurrentNumber.innerText = cssData.questions.length - 9;
+  progressBar.value = cssData.questions.length - 9;
+  answerTextA.innerText = cssData.questions[0].options[0];
+  answerTextB.innerText = cssData.questions[0].options[1];
+  answerTextC.innerText = cssData.questions[0].options[2];
+  answerTextD.innerText = cssData.questions[0].options[3];
+  console.log(cssData);
 }
 
-function openAccessQuiz() {
+function openJsQuiz(jsData) {
   logoContainer.style.visibility = "visible";
   welcomeContainer.style.display = "none";
-  mainQuizContainer.style.display = "flex";
-  logoImage.src = "./assets/images/icon-accessibility.svg";
-  logoText.innerText = "Accessibility";
+  mainQuizContainer.style.display = mediaQueryList.matches ? "grid" : "flex";
+  // Logic with data
+  logoImage.src = jsData.icon;
+  logoText.innerText = jsData.title;
+  questionText.innerText = jsData.questions[0].question;
+  questionCurrentNumber.innerText = jsData.questions.length - 9;
+  progressBar.value = jsData.questions.length - 9;
+  answerTextA.innerText = jsData.questions[0].options[0];
+  answerTextB.innerText = jsData.questions[0].options[1];
+  answerTextC.innerText = jsData.questions[0].options[2];
+  answerTextD.innerText = jsData.questions[0].options[3];
+  console.log(jsData);
+}
+
+function openAccessQuiz(accessData) {
+  logoContainer.style.visibility = "visible";
+  welcomeContainer.style.display = "none";
+  mainQuizContainer.style.display = mediaQueryList.matches ? "grid" : "flex";
+  // Logic with data
+  logoImage.src = accessData.icon;
+  logoText.innerText = accessData.title;
+  questionText.innerText = accessData.questions[0].question;
+  questionCurrentNumber.innerText = accessData.questions.length - 9;
+  progressBar.value = accessData.questions.length - 9;
+  answerTextA.innerText = accessData.questions[0].options[0];
+  answerTextB.innerText = accessData.questions[0].options[1];
+  answerTextC.innerText = accessData.questions[0].options[2];
+  answerTextD.innerText = accessData.questions[0].options[3];
+  console.log(accessData);
 }

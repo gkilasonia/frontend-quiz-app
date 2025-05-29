@@ -335,12 +335,6 @@ progress::-webkit-progress-value {
   border-radius: 12px;
 }
 
-/* .answer-container:hover {
-  border: 3px solid var(--Purple-600);
-  padding: 13px 13px;
-  cursor: pointer;
-} */
-
 .answer-text-container {
   display: flex;
   align-items: center;
@@ -383,10 +377,16 @@ progress::-webkit-progress-value {
   color: var(--White);
 }
 
-/* .submit-answer-button:hover {
+.submit-answer-button:hover {
   opacity: 50%;
   transition: all 0.3s ease-in-out;
-} */
+}
+
+.submit-answer-button:focus {
+  outline: unset;
+  opacity: 50%;
+  transition: all 0.3s ease-in-out;
+}
 
 /* Error message */
 
@@ -903,4 +903,45 @@ progress::-webkit-progress-value {
     border-radius: 24px;
     padding: 32px 0px;
   }
+}
+
+/* Interaction */
+
+.answer-container:hover {
+  outline: 3px solid var(--Purple-600);
+  cursor: pointer;
+}
+
+.answer-container:hover .variants {
+  background-color: var(--Purple-600);
+  color: var(--White);
+}
+
+.answer-container:focus {
+  outline: 3px solid var(--Purple-600);
+}
+
+.answer-container:focus .variants {
+  background-color: var(--Purple-600);
+  color: var(--White);
+}
+
+.correct-answer-outline {
+  outline: 3px solid var(--Green-500);
+  cursor: pointer;
+}
+
+.correct-answer-background {
+  background-color: var(--Green-500);
+  color: var(--White);
+}
+
+.incorrect-answer-outline {
+  outline: 3px solid var(--Red-500);
+  cursor: pointer;
+}
+
+.incorrect-answer-background {
+  background-color: var(--Red-500);
+  color: var(--White);
 }
