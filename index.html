@@ -60,11 +60,10 @@
         </div>
         <div id="subjects-container" class="subjects-container">
           <!-- HTML Logo -->
-          <div
+          <button
+            data-quiz-index="0"
             id="html-logo-container"
             class="html-logo-container"
-            role="button"
-            tabindex="0"
           >
             <div class="logo">
               <img
@@ -74,13 +73,12 @@
               />
             </div>
             <p class="logo-text">HTML</p>
-          </div>
+          </button>
           <!-- CSS Logo -->
-          <div
+          <button
+            data-quiz-index="1"
             id="css-logo-container"
             class="css-logo-container"
-            role="button"
-            tabindex="0"
           >
             <div class="logo">
               <img
@@ -90,13 +88,12 @@
               />
             </div>
             <p class="logo-text">CSS</p>
-          </div>
+          </button>
           <!-- JS Logo -->
-          <div
+          <button
+            data-quiz-index="2"
             id="js-logo-container"
             class="js-logo-container"
-            role="button"
-            tabindex="0"
           >
             <div class="logo">
               <img
@@ -106,13 +103,12 @@
               />
             </div>
             <p class="logo-text">Javascript</p>
-          </div>
+          </button>
           <!-- Accessibility Logo -->
-          <div
+          <button
+            data-quiz-index="3"
             id="access-logo-container"
             class="access-logo-container"
-            role="button"
-            tabindex="0"
           >
             <div class="logo">
               <img
@@ -122,7 +118,7 @@
               />
             </div>
             <p class="logo-text">Accessibility</p>
-          </div>
+          </button>
         </div>
       </div>
       <!-- Quiz menu end -->
@@ -146,7 +142,7 @@
         <!-- Quiz question end -->
         <!-- Quiz answer start -->
         <div class="quiz-answers-container">
-          <div class="answer-container" role="button" tabindex="0">
+          <button class="answer-container">
             <div class="answer-text-container">
               <p class="variants">A</p>
               <p id="answer-text-a" class="answer-text">4.5 : 1</p>
@@ -156,8 +152,8 @@
               src="./assets/images/icon-correct.svg"
               alt=""
             />
-          </div>
-          <div role="button" tabindex="0" class="answer-container">
+          </button>
+          <button class="answer-container">
             <div class="answer-text-container">
               <p class="variants">B</p>
               <p id="answer-text-b" class="answer-text">3 : 1</p>
@@ -167,8 +163,8 @@
               src="./assets/images/icon-error.svg"
               alt=""
             />
-          </div>
-          <div role="button" tabindex="0" class="answer-container">
+          </button>
+          <button class="answer-container">
             <div class="answer-text-container">
               <p class="variants">C</p>
               <p id="answer-text-c" class="answer-text">2.5 : 1</p>
@@ -178,8 +174,8 @@
               src="./assets/images/icon-error.svg"
               alt=""
             />
-          </div>
-          <div role="button" tabindex="0" class="answer-container">
+          </button>
+          <button class="answer-container">
             <div class="answer-text-container">
               <p class="variants">D</p>
               <p id="answer-text-d" class="answer-text">5 : 1</p>
@@ -189,7 +185,7 @@
               src="./assets/images/icon-error.svg"
               alt=""
             />
-          </div>
+          </button>
           <button id="submit-answer-button" class="submit-answer-button">
             Submit Answer
           </button>

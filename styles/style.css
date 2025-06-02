@@ -907,6 +907,21 @@ progress::-webkit-progress-value {
 
 /* Interaction */
 
+.html-logo-container:hover,
+.css-logo-container:hover,
+.js-logo-container:hover,
+.access-logo-container:hover {
+  outline: 3px solid var(--Purple-600);
+  cursor: pointer;
+}
+
+.html-logo-container:focus,
+.css-logo-container:focus,
+.js-logo-container:focus,
+.access-logo-container:focus {
+  outline: 3px solid var(--Purple-600);
+}
+
 .answer-container:hover {
   outline: 3px solid var(--Purple-600);
   cursor: pointer;
