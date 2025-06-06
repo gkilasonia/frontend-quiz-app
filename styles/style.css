@@ -91,6 +91,8 @@ textarea,
 select {
   font: inherit;
   border: none;
+  background-color: var(--White);
+  color: var(--Blue-900);
 }
 
 a {
@@ -111,6 +113,7 @@ body {
   background-size: cover;
   background-position: center;
   background-color: var(--Gray-50);
+  color: var(--Blue-900);
   font-family: var(--Medium);
   padding: 16px 24px 87px 24px;
   margin: 0 auto;
@@ -151,6 +154,21 @@ main {
   width: 40px;
   height: 40px;
   border-radius: 4px;
+}
+
+.html {
+  background-color: var(--Orange-50);
+}
+
+.css {
+  background-color: var(--Green-100);
+}
+
+.js {
+  background-color: var(--Blue-50);
+}
+
+.access {
   background-color: var(--Purple-100);
 }
 
@@ -162,7 +180,6 @@ main {
 .logo-text {
   font-size: 18px;
   line-height: 100%;
-  color: var(--Blue-900);
 }
 
 /* Light and Dark mode container */
@@ -233,7 +250,6 @@ main {
   font-weight: 300;
   font-size: 40px;
   line-height: 100%;
-  color: var(--Blue-900);
 }
 
 .strong-header {
@@ -267,7 +283,6 @@ main {
   align-items: center;
   gap: 16px;
   padding: 16px;
-  background-color: var(--White);
   border-radius: 12px;
 }
 
@@ -294,7 +309,6 @@ main {
 .question-text {
   font-size: 20px;
   line-height: 120%;
-  color: var(--Blue-900);
   padding-bottom: 8px;
 }
 
@@ -331,7 +345,6 @@ progress::-webkit-progress-value {
   justify-content: space-between;
   align-items: center;
   padding: 16px;
-  background-color: var(--White);
   border-radius: 12px;
 }
 
@@ -345,7 +358,7 @@ progress::-webkit-progress-value {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 40px;
+  min-width: 40px;
   height: 40px;
   background-color: var(--Gray-50);
   border-radius: 6px;
@@ -375,17 +388,6 @@ progress::-webkit-progress-value {
   font-size: 18px;
   line-height: 100%;
   color: var(--White);
-}
-
-.submit-answer-button:hover {
-  opacity: 50%;
-  transition: all 0.3s ease-in-out;
-}
-
-.submit-answer-button:focus {
-  outline: unset;
-  opacity: 50%;
-  transition: all 0.3s ease-in-out;
 }
 
 /* Error message */
@@ -426,7 +428,6 @@ progress::-webkit-progress-value {
   font-weight: 300;
   font-size: 40px;
   line-height: 100%;
-  color: var(--Blue-900);
   width: 100%;
 }
 
@@ -457,7 +458,6 @@ progress::-webkit-progress-value {
   font-weight: 500;
   font-size: 88px;
   line-height: 100%;
-  color: var(--Blue-900);
 }
 
 .out-of-nmb-text {
@@ -475,13 +475,44 @@ progress::-webkit-progress-value {
   padding: 19px 0px;
 }
 
+/* Light/Dark mode toggler */
+
+.dark-button {
+  background-color: var(--Blue-850);
+  color: var(--White);
+}
+
+.header-text-dark {
+  color: var(--Blue-300);
+}
+
+.progress::-webkit-progress-bar {
+  background-color: var(--Blue-850);
+}
+
+.answer-text-dark {
+  color: var(--White);
+}
+
+.error-text-dark {
+  color: var(--White);
+}
+
+.score-container-dark {
+  background-color: var(--Blue-850);
+}
+
+.out-of-nmb-text-dark {
+  color: var(--Blue-300);
+}
+
 /* Tablet size */
 
 @media only screen and (min-width: 577px) and (max-width: 1024px) {
   /* Main CSS */
 
   body {
-    background-image: url(../assets/images/pattern-background-desktop-light.svg);
+    background-image: url(../assets/images/pattern-background-tablet-light.svg);
     padding: 40px 64px 52px 64px;
   }
 
@@ -603,7 +634,7 @@ progress::-webkit-progress-value {
   }
 
   .variants {
-    width: 56px;
+    min-width: 56px;
     height: 56px;
     border-radius: 12px;
     font-size: 28px;
@@ -686,7 +717,7 @@ progress::-webkit-progress-value {
   /* Main CSS */
 
   body {
-    background-image: url(../assets/images/pattern-background-tablet-light.svg);
+    background-image: url(../assets/images/pattern-background-desktop-light.svg);
     padding: 83px 140px 148px 140px;
   }
 
@@ -825,7 +856,7 @@ progress::-webkit-progress-value {
   }
 
   .variants {
-    width: 56px;
+    min-width: 56px;
     height: 56px;
     border-radius: 12px;
     font-size: 28px;
@@ -922,28 +953,27 @@ progress::-webkit-progress-value {
   outline: 3px solid var(--Purple-600);
 }
 
-.answer-container:hover {
+.answer-container:not(.effects-disabled):hover {
   outline: 3px solid var(--Purple-600);
   cursor: pointer;
 }
 
-.answer-container:hover .variants {
+.answer-container:not(.effects-disabled):hover .variants {
   background-color: var(--Purple-600);
   color: var(--White);
 }
 
-.answer-container:focus {
+.answer-container:not(.effects-disabled):focus {
   outline: 3px solid var(--Purple-600);
 }
 
-.answer-container:focus .variants {
+.answer-container:not(.effects-disabled):focus .variants {
   background-color: var(--Purple-600);
   color: var(--White);
 }
 
 .correct-answer-outline {
   outline: 3px solid var(--Green-500);
-  cursor: pointer;
 }
 
 .correct-answer-background {
@@ -953,10 +983,18 @@ progress::-webkit-progress-value {
 
 .incorrect-answer-outline {
   outline: 3px solid var(--Red-500);
-  cursor: pointer;
 }
 
 .incorrect-answer-background {
   background-color: var(--Red-500);
   color: var(--White);
+}
+
+.submit-answer-button:hover {
+  opacity: 50%;
+  transition: all 0.3s ease-in-out;
+}
+
+.submit-answer-button:focus {
+  outline: 3px solid var(--Blue-950);
 }

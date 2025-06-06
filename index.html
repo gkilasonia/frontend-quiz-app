@@ -28,7 +28,7 @@
         <p id="logo-text" class="logo-text">Accessibility</p>
       </div>
       <!-- Light Dark mode toggler -->
-      <div class="light-dark-mode">
+      <div id="light-dark-mode" class="light-dark-mode">
         <img
           id="sun-icon"
           class="sun-icon"
@@ -64,8 +64,9 @@
             data-quiz-index="0"
             id="html-logo-container"
             class="html-logo-container"
+            type="button"
           >
-            <div class="logo">
+            <div class="logo html">
               <img
                 class="logo-image"
                 src="./assets/images/icon-html.svg"
@@ -79,8 +80,9 @@
             data-quiz-index="1"
             id="css-logo-container"
             class="css-logo-container"
+            type="button"
           >
-            <div class="logo">
+            <div class="logo css">
               <img
                 class="logo-image"
                 src="./assets/images/icon-css.svg"
@@ -94,8 +96,9 @@
             data-quiz-index="2"
             id="js-logo-container"
             class="js-logo-container"
+            type="button"
           >
-            <div class="logo">
+            <div class="logo js">
               <img
                 class="logo-image"
                 src="./assets/images/icon-js.svg"
@@ -109,8 +112,9 @@
             data-quiz-index="3"
             id="access-logo-container"
             class="access-logo-container"
+            type="button"
           >
-            <div class="logo">
+            <div class="logo access">
               <img
                 class="logo-image"
                 src="./assets/images/icon-accessibility.svg"
@@ -142,51 +146,75 @@
         <!-- Quiz question end -->
         <!-- Quiz answer start -->
         <div class="quiz-answers-container">
-          <button class="answer-container">
+          <button
+            id="answer-container-a"
+            class="answer-container"
+            type="button"
+          >
             <div class="answer-text-container">
-              <p class="variants">A</p>
+              <p id="answer-letter-a" class="variants">A</p>
               <p id="answer-text-a" class="answer-text">4.5 : 1</p>
             </div>
             <img
+              id="answer-icon-a"
               class="correct-incorrect"
               src="./assets/images/icon-correct.svg"
               alt=""
             />
           </button>
-          <button class="answer-container">
+          <button
+            id="answer-container-b"
+            class="answer-container"
+            type="button"
+          >
             <div class="answer-text-container">
-              <p class="variants">B</p>
+              <p id="answer-letter-b" class="variants">B</p>
               <p id="answer-text-b" class="answer-text">3 : 1</p>
             </div>
             <img
+              id="answer-icon-b"
               class="correct-incorrect"
               src="./assets/images/icon-error.svg"
               alt=""
             />
           </button>
-          <button class="answer-container">
+          <button
+            id="answer-container-c"
+            class="answer-container"
+            type="button"
+          >
             <div class="answer-text-container">
-              <p class="variants">C</p>
+              <p id="answer-letter-c" class="variants">C</p>
               <p id="answer-text-c" class="answer-text">2.5 : 1</p>
             </div>
             <img
+              id="answer-icon-c"
               class="correct-incorrect"
               src="./assets/images/icon-error.svg"
               alt=""
             />
           </button>
-          <button class="answer-container">
+          <button
+            id="answer-container-d"
+            class="answer-container"
+            type="button"
+          >
             <div class="answer-text-container">
-              <p class="variants">D</p>
+              <p id="answer-letter-d" class="variants">D</p>
               <p id="answer-text-d" class="answer-text">5 : 1</p>
             </div>
             <img
+              id="answer-icon-d"
               class="correct-incorrect"
               src="./assets/images/icon-error.svg"
               alt=""
             />
           </button>
-          <button id="submit-answer-button" class="submit-answer-button">
+          <button
+            id="submit-answer-button"
+            class="submit-answer-button"
+            type="button"
+          >
             Submit Answer
           </button>
           <div id="error-message-container" class="error-message-container">
@@ -208,21 +236,23 @@
         </div>
         <div class="result-container">
           <div class="score-container">
-            <div class="logo-container">
-              <div class="logo">
+            <div id="score-logo-container" class="logo-container">
+              <div class="logo logo-background">
                 <img
-                  id="logo-image"
+                  id="score-logo-image"
                   class="logo-image"
                   src="./assets/images/icon-accessibility.svg"
                   alt=""
                 />
               </div>
-              <p id="logo-text" class="logo-text">Accessibility</p>
+              <p id="score-logo-text" class="logo-text">Accessibility</p>
             </div>
             <p id="score" class="score">8</p>
             <p class="out-of-nmb-text">out of 10</p>
           </div>
-          <button id="play-again-btn" class="play-again-btn">Play Again</button>
+          <button id="play-again-btn" class="play-again-btn" type="button">
+            Play Again
+          </button>
         </div>
       </div>
       <!-- Quiz completed end -->
