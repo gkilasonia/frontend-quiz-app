@@ -1,3 +1,4 @@
+let myDatabaseData = null;
 const mediaQuery = "(min-width: 1025px)";
 const mediaQueryList = window.matchMedia(mediaQuery);
 const backgroundColors = {
@@ -7,7 +8,6 @@ const backgroundColors = {
   accessColor: "var(--Purple-100)",
 };
 
-let myDatabaseData = null;
 let currentQuizData = null;
 let currentQuestionIndex = 0;
 let score = 0;
@@ -135,11 +135,9 @@ function startQuiz(quizData) {
     logoBackground.style.background = backgroundColors.accessColor;
     logoBackground2.style.background = backgroundColors.accessColor;
   }
-
   if (welcomeContainer) welcomeContainer.style.display = "none";
   if (mainQuizContainer)
     mainQuizContainer.style.display = mediaQueryList.matches ? "grid" : "flex";
-
   if (logoImage) logoImage.src = currentQuizData.icon;
   if (logoText) logoText.innerText = currentQuizData.title;
   if (questionCurrentNumber)
@@ -165,15 +163,14 @@ function displayQuestion() {
     questionCurrentNumber.innerText = currentQuestionIndex + 1;
   if (progressBar) progressBar.value = currentQuestionIndex + 1;
 
-  // ეს ობიექტით პროცესი მაინტერესებს
-
   const optionKeys = Object.keys(answerOptionElements);
+
   question.options.forEach((optionText, index) => {
     const key = optionKeys[index];
     if (answerOptionElements[key] && answerOptionElements[key].textEl) {
       const elements = answerOptionElements[key];
       elements.textEl.innerText = optionText;
-      elements.textEl.disabled = false; // ეს რატომ
+      elements.textEl.disabled = false;
 
       //Reset styles
       elements.containerEl.classList.remove(
@@ -229,6 +226,7 @@ function handleAnswerSelection(event) {
   // Assigment to variables to store clicked button credentials
 
   if (keyForElements) {
+    //????????/
     const elements = answerOptionElements[keyForElements];
 
     selectedAnswerData = {
@@ -283,7 +281,6 @@ function handleSubmitAnswer() {
       feedbackIcon.style.visibility = "visible";
     }
     score++;
-    console.log(score);
   } else {
     if (container) container.classList.add("incorrect-answer-outline");
     if (letterContainer)
@@ -324,7 +321,7 @@ function restartQuiz() {
 function lightDarkToggler() {
   lightMode = !lightMode;
   if (lightMode === false) {
-    document.body.style.background = mediaQueryList.matches
+    document.body.style.background = mediaQueryList.matches // აქ ტაბლეტსაც თუ დავამატებ კაცი ვარ
       ? "url(../assets/images/pattern-background-desktop-dark.svg)"
       : "url(../assets/images/pattern-background-mobile-dark.svg)";
     document.body.style.backgroundColor = "var(--Blue-900)";
